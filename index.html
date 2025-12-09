@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Siam Ahmed - Wikipedia</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f6f6;
+            color: #202122;
+            line-height: 1.6;
+        }
+        
+        /* Wikipedia-style Header */
+        .wiki-header {
+            background: #fff;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 0.5rem 0;
+        }
+        
+        .wiki-logo {
+            font-family: 'Montserrat', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #202122;
+            text-decoration: none;
+        }
+        
+        .wiki-logo span {
+            font-style: italic;
+        }
+        
+        .wiki-nav {
+            font-size: 0.875rem;
+        }
+        
+        .wiki-nav a {
+            color: #202122;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .wiki-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Content Area */
+        .wiki-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 0;
+        }
+        
+        .wiki-content {
+            padding: 20px 30px;
+        }
+        
+        /* Article Title */
+        .article-title {
+            font-family: 'Montserrat', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .article-subtitle {
+            font-size: 0.875rem;
+            color: #54595d;
+            margin-bottom: 15px;
+        }
+        
+        /* Infobox */
+        .infobox {
+            float: right;
+            margin: 0 0 1em 1em;
+            width: 300px;
+            border: 1px solid #a2a9b1;
+            background: #f8f9fa;
+            font-size: 0.875rem;
+        }
+        
+        .infobox-title {
+            background: #d3d3d3;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .infobox-image {
+            text-align: center;
+            padding: 10px;
+            background: white;
+        }
+        
+        .infobox-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .infobox-row {
+            border-top: 1px solid #a2a9b1;
+            padding: 8px 10px;
+        }
+        
+        .infobox-label {
+            font-weight: 600;
+            color: #202122;
+            margin-bottom: 3px;
+        }
+        
+        .infobox-data {
+            color: #202122;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            border: 1px solid #a2a9b1;
+            background: #f8f9fa;
+            padding: 10px;
+            display: inline-block;
+            margin: 15px 0 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .toc-title {
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .toc-list li {
+            margin: 5px 0;
+        }
+        
+        .toc-list a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .toc-number {
+            margin-right: 5px;
+        }
+        
+        .toc-sublist {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        /* Section Headings */
+        h2 {
+            font-family: 'Montserrat', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            border-bottom: 1px solid #a2a9b1;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 3px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Wikipedia-style Links */
+        a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        a:visited {
+            color: #0b0080;
+        }
+        
+        /* Edit buttons */
+        .edit-section {
+            float: right;
+            font-size: 0.75rem;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+        
+        .edit-section a {
+            color: #0645ad;
+        }
+        
+        /* Lists */
+        ul {
+            margin-left: 1.6em;
+        }
+        
+        /* References */
+        .references {
+            font-size: 0.875rem;
+        }
+        
+        .references ol {
+            margin-left: 2em;
+        }
+        
+        /* External Links */
+        .external-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .external-links li:before {
+            content: "🔗 ";
+            margin-right: 5px;
+        }
+        
+        /* Footer */
+        .wiki-footer {
+            background: #f8f9fa;
+            border-top: 1px solid #a2a9b1;
+            padding: 20px 0;
+            margin-top: 30px;
+            font-size: 0.875rem;
+            color: #54595d;
+        }
+        
+        /* Categories */
+        .categories {
+            background: #f8f9fa;
+            border-top: 1px solid #a2a9b1;
+            padding: 10px 15px;
+            margin-top: 30px;
+            font-size: 0.875rem;
+        }
+        
+        .categories a {
+            color: #0645ad;
+            margin-right: 10px;
+        }
+        
+        /* Hatnote */
+        .hatnote {
+            font-style: italic;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .infobox {
+                float: none;
+                margin: 0 auto 20px auto;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .article-title {
+                font-size: 1.5rem;
+            }
+            
+            .wiki-content {
+                padding: 15px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .wiki-header, .edit-section, .wiki-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Wikipedia Header -->
+    <header class="wiki-header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="wiki-logo">Wikipedia<span>Siam</span></a>
+                <nav class="wiki-nav d-none d-md-block">
+                    <a href="#">Article</a>
+                    <a href="#">Talk</a>
+                    <a href="#">Read</a>
+                    <a href="#">Edit</a>
+                    <a href="#">View history</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="wiki-container">
+        <div class="wiki-content">
+            <!-- Article Title -->
+            <h1 class="article-title">SP Siam Ahmed</h1>
+            <div class="article-subtitle">From Wikipedia, the free encyclopedia</div>
+            
+            <!-- Infobox -->
+            <div class="infobox">
+                <div class="infobox-title">SP Siam Ahmed</div>
+                <div class="infobox-image">
+                    <img src="profile.jpg" alt="SP Siam Ahmed">
+                    <div style="font-size: 0.8rem; color: #54595d; margin-top: 5px;">SP Siam Ahmed</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Born</div>
+                    <div class="infobox-data">2008 (age 16–17)<br>Bangladesh</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Nationality</div>
+                    <div class="infobox-data">Bangladeshi</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Occupation</div>
+                    <div class="infobox-data">Frontend Web Developer<br>Islamic Content Creator<br>Student</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Known for</div>
+                    <div class="infobox-data">Responsive web design<br>Islamic educational content</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Education</div>
+                    <div class="infobox-data">Katiadi Government College (2024–present)</div>
+                </div>
+            </div>
+            
+            <!-- Lead Section -->
+            <p><strong>SP Siam Ahmed</strong> (born 2008) is a <a href="#">Bangladeshi</a> <a href="#">frontend web developer</a>, <a href="#">Islamic content creator</a>, and college student. He is known for his work in <a href="#">responsive web design</a>, web development, and creating educational and Islamic content online through his <a href="#">YouTube</a> channel.</p>
+            
+            <p>Ahmed specializes in developing user-friendly websites using modern web technologies including <a href="#">HTML</a>, <a href="#">CSS</a>, <a href="#">JavaScript</a>, and various frameworks. Alongside his technical work, he manages a YouTube channel focused on Islamic teachings, mental wellness, and educational guidance, contributing to digital Islamic education in Bangladesh.</p>
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ul class="toc-list">
+                    <li><span class="toc-number">1</span><a href="#early-life">Early life and education</a>
+                        <ul class="toc-sublist">
+                            <li><span class="toc-number">1.1</span><a href="#primary">Primary education</a></li>
+                            <li><span class="toc-number">1.2</span><a href="#secondary">Secondary education</a></li>
+                            <li><span class="toc-number">1.3</span><a href="#higher">Higher secondary</a></li>
+                        </ul>
+                    </li>
+                    <li><span class="toc-number">2</span><a href="#career">Career</a>
+                        <ul class="toc-sublist">
+                            <li><span class="toc-number">2.1</span><a href="#web-dev">Web development</a></li>
+                            <li><span class="toc-number">2.2</span><a href="#content">Content creation</a></li>
+                        </ul>
+                    </li>
+                    <li><span class="toc-number">3</span><a href="#skills">Skills and expertise</a></li>
+                    <li><span class="toc-number">4</span><a href="#achievements">Notable achievements</a></li>
+                    <li><span class="toc-number">5</span><a href="#external">External links</a></li>
+                </ul>
+            </div>
+            
+            <!-- Early Life and Education -->
+            <h2 id="early-life">Early life and education<span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            
+            <p>SP Siam Ahmed was born in <a href="#">Bangladesh</a> in 2008. His educational journey began in his early years and has been marked by consistent academic progress alongside developing professional skills in technology and content creation.</p>
+            
+            <h3 id="primary">Primary education</h3>
+            <p>Ahmed began his formal education at <strong>Bayezeed KG School</strong>, where he completed his primary education from 2015 to 2017. During these formative years, he developed foundational learning skills and academic discipline that would support his later pursuits.</p>
+            
+            <h3 id="secondary">Secondary education</h3>
+            <p>Following his primary education, Ahmed continued at Bayezeed KG School and obtained his <a href="#">Junior School Certificate</a> (JSC) in 2022. He then attended <strong>Katiadi Government School</strong> for his <a href="#">Secondary School Certificate</a> (SSC) from 2022 to 2024, where he successfully completed his secondary education while beginning to explore web development and digital content creation.</p>
+            
+            <h3 id="higher">Higher secondary</h3>
+            <p>Since 2024, Ahmed has been enrolled at <strong>Katiadi Government College</strong> for his <a href="#">Higher Secondary Certificate</a> (HSC) studies. He continues to balance his academic responsibilities with his growing professional activities in web development and content creation.</p>
+            
+            <!-- Career -->
+            <h2 id="career">Career<span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            
+            <p>Ahmed's professional activities encompass two primary areas: frontend web development and Islamic content creation. Despite his young age, he has successfully established himself in both domains while maintaining his academic commitments.</p>
+            
+            <h3 id="web-dev">Web development</h3>
+            <p>As a <a href="#">frontend web developer</a>, Ahmed specializes in creating <a href="#">responsive</a> and user-friendly websites. His technical expertise includes proficiency in core web technologies such as <a href="#">HTML5</a>, <a href="#">CSS3</a>, and <a href="#">JavaScript</a>. He also works with popular frameworks including <a href="#">Bootstrap</a>, which enables him to develop modern, mobile-first web applications efficiently.</p>
+            
+            <p>Ahmed's approach to web development emphasizes accessibility, clean code, and optimal user experience across different devices and screen sizes. He has completed multiple projects for both personal portfolio development and client work, demonstrating his ability to deliver professional-grade web solutions.</p>
+            
+            <h3 id="content">Content creation</h3>
+            <p>Ahmed manages his <a href="#">YouTube</a> channel titled <strong>"SP Siam Ahmed"</strong>, where he produces content focused on Islamic teachings, mental wellness, and educational guidance. His channel serves as a platform for digital Islamic education, contributing to the growing ecosystem of online Islamic content in <a href="#">Bangladesh</a> and beyond.</p>
+            
+            <p>The content on his channel addresses various topics related to Islamic values, self-development, and educational support, catering to a diverse audience seeking guidance and knowledge in these areas.</p>
+            
+            <!-- Skills and Expertise -->
+            <h2 id="skills">Skills and expertise<span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            
+            <p>Ahmed has developed a diverse skill set that combines technical abilities with content creation capabilities:</p>
+            
+            <ul>
+                <li><strong>Frontend Web Development</strong> - Proficient in HTML5, CSS3, JavaScript, and Bootstrap framework</li>
+                <li><strong>Responsive Web Design</strong> - Creating mobile-first, cross-device compatible websites</li>
+                <li><strong>User Experience (UX)</strong> - Designing intuitive and accessible web interfaces</li>
+                <li><strong>Islamic Content Creation</strong> - Producing educational content on Islamic teachings and values</li>
+                <li><strong>Digital Education</strong> - Providing educational guidance and self-development content</li>
+                <li><strong>Video Production</strong> - Creating and editing video content for online platforms</li>
+            </ul>
+            
+            <!-- Notable Achievements -->
+            <h2 id="achievements">Notable achievements<span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            
+            <p>Despite his young age, Ahmed has accomplished several notable milestones in his career:</p>
+            
+            <ul>
+                <li><strong>Multiple Website Projects</strong> - Developed and deployed multiple responsive websites for personal and client projects, demonstrating professional competency in web development</li>
+                <li><strong>YouTube Channel</strong> - Successfully established and grown his Islamic educational YouTube channel, creating a platform for knowledge sharing</li>
+                <li><strong>Academic-Professional Balance</strong> - Maintained academic excellence while actively pursuing professional development in web development and content creation, showcasing strong time management and dedication</li>
+                <li><strong>Technical Proficiency</strong> - Achieved proficiency in modern web development technologies and frameworks at a young age</li>
+            </ul>
+            
+            <!-- External Links -->
+            <h2 id="external" class="external-links">External links<span class="edit-section">[<a href="#">edit</a>]</span></h2>
+            <ul>
+                <li><a href="https://spsiamahmed.github.io/official" class="external">Official Portfolio Website</a></li>
+                <li><a href="https://youtube.com/@sp-siam-ahmed?si=k58yiEMrBrn4D5wG" class="external">SP Siam Ahmed YouTube Channel</a></li>
+            </ul>
+            
+            <!-- Categories -->
+            <div class="categories">
+                <strong>Categories:</strong>
+                <a href="#">2008 births</a>
+                <a href="#">Living people</a>
+                <a href="#">Bangladeshi web developers</a>
+                <a href="#">Bangladeshi YouTubers</a>
+                <a href="#">Islamic content creators</a>
+                <a href="#">Frontend developers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="wiki-footer">
+        <div class="container">
+            <div class="text-center">
+                <p>This page was last edited on 9 December 2024, at 12:00 (UTC).</p>
+                <p>Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply.</p>
+                <p style="margin-top: 10px;">
+                    <a href="#">Privacy policy</a> · 
+                    <a href="#">About Wikipedia</a> · 
+                    <a href="#">Disclaimers</a> · 
+                    <a href="#">Contact Wikipedia</a> · 
+                    <a href="#">Developers</a> · 
+                    <a href="#">Statistics</a> · 
+                    <a href="#">Cookie statement</a> · 
+                    <a href="#">Mobile view</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for TOC links
+            $('.toc-list a').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 20
+                    }, 600);
+                }
+            });
+            
+            // Highlight current section in TOC
+            $(window).scroll(function() {
+                var scrollPos = $(window).scrollTop() + 100;
+                
+                $('h2[id], h3[id]').each(function() {
+                    var top = $(this).offset().top;
+                    var bottom = top + $(this).outerHeight();
+                    var id = $(this).attr('id');
+                    
+                    if(scrollPos >= top && scrollPos <= bottom) {
+                        $('.toc-list a').css('font-weight', 'normal');
+                        $('.toc-list a[href="#' + id + '"]').css('font-weight', 'bold');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
